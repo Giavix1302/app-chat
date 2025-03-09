@@ -58,7 +58,7 @@ export const sendMessage = async (req, res) => {
 
     // todo: realtime functionality go here => socket.io
 
-    res.status(201).json(newMessage)
+    res.status(200).json(newMessage)
 
   } catch (error) {
     console.log("Error in sendMessage controller", error.message)
