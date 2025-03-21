@@ -1,14 +1,16 @@
-const ChatHeader = () =>{
+import { X } from "lucide-react";
+import { useAuthStore } from "../store/useAuthStore";
+import { useChatStore } from "../store/useChatStore";
 
-    const {selectedUser, setSelectedUser} = useChatStore()
+const ChatHeader = () => {
+    const { selectedUser, setSelectedUser } = useChatStore();
+    const { onlineUsers } = useAuthStore();
 
-    const {onlineUsers} = useAuthStore()
-
-    return(
+    return (
         <div className="p-2.5 border-b border-base-300">
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                   {/* avatar */}
+                    {/* Avatar */}
                     <div className="avatar">
                         <div className="size-10 rounded-full relative">
                             <img src={selectedUser.profilePic || "/avatar.png"} alt={selectedUser.fullName} />
@@ -24,13 +26,12 @@ const ChatHeader = () =>{
                     </div>
                 </div>
 
-                    {/* Close button */}
-                <button onClick={()=>selectedUser(null)}>
+                {/* Close button */}
+                <button onClick={() => setSelectedUser(null)}>
                     <X />
-                </button> 
+                </button>
             </div>
         </div>
-    )
-}
-
-export default ChatHeader
+    );
+};
+export default ChatHeader;
