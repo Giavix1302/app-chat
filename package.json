@@ -9,11 +9,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "daisyui": "^5.0.6"
-  },
-  "dependencies": {
-    "vite": "^6.2.2"
-  }
+  "license": "ISC"
 }
